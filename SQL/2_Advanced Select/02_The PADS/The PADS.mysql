@@ -8,3 +8,14 @@ SELECT CONCAT('There are a total of ',COUNT(OCCUPATION),' ',LOWER(OCCUPATION),'s
 FROM OCCUPATIONS
 GROUP BY OCCUPATION
 ORDER BY COUNT(OCCUPATION), OCCUPATION;
+
+/*
+Working platform:- Db2 - Mine
+*/
+select Name || '(' || UPPER(substr(Occupation,1,1)) || ')'
+from OCCUPATIONS
+order by Name;
+
+select 'There are a total of ' ||count(Occupation)||' '  || LOWER(Occupation) || 's.'
+from OCCUPATIONS group by Occupation
+order by count(Occupation);
